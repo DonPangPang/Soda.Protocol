@@ -21,7 +21,7 @@ public static class ProtocolExtensions
 
         foreach (var prop in props)
         {
-            if (prop.GetCustomAttributes<ProtocolIgnoreAttribute>(true).Any())
+            if (prop.GetCustomAttributes<IgnoreAttribute>(true).Any())
             {
                 continue;
             }
@@ -31,9 +31,9 @@ public static class ProtocolExtensions
             //    var backingAttr = prop.GetCustomAttributes<BackingSpanAttribute>().First();
             //}
 
-            if (prop.GetCustomAttributes<ProtocolBodyLengthAttribute>().Any())
+            if (prop.GetCustomAttributes<BodyLengthAttribute>().Any())
             {
-                var lengthAttr = prop.GetCustomAttribute<ProtocolBodyLengthAttribute>()!;
+                var lengthAttr = prop.GetCustomAttribute<BodyLengthAttribute>()!;
                 var lengthProp = props.First(x => x.Name == lengthAttr.LengthField);
                 var length = int.Parse(lengthProp.GetValue(obj)?.ToString() ?? "0");
 
@@ -41,7 +41,7 @@ public static class ProtocolExtensions
                 continue;
             }
 
-            var attr = prop.GetCustomAttribute<ProtocolSpanAttribute>();
+            var attr = prop.GetCustomAttribute<SpanAttribute>();
 
             if (prop.PropertyType is { IsClass: true, IsArray: false } && attr?.Size is null)
             {

@@ -10,10 +10,10 @@ namespace Soda.Protocol.Framework.Test
         {
             public ushort Header { get; set; }
 
-            [ProtocolSpan(30)]
+            [Span(30)]
             public byte[] Data { get; set; } = Array.Empty<byte>();
 
-            [ProtocolSpan(SpanType.Bits, 4)]
+            [Span(SpanType.Bits, 4)]
             public byte End { get; set; }
         }
 
@@ -29,17 +29,17 @@ namespace Soda.Protocol.Framework.Test
         {
             public ushort Header { get; set; }
 
-            [ProtocolSpan(30)]
+            [Span(30)]
             public byte[] Data { get; set; } = Array.Empty<byte>();
 
-            [ProtocolSpan(SpanType.Bits, 4)]
+            [Span(SpanType.Bits, 4)]
             public byte End { get; set; }
 
             public MyClass? Child { get; set; }
 
             public bool IsAck { get; set; }
 
-            [ProtocolIgnore]
+            [Ignore]
             public bool IsReq { get; set; }
         }
 
@@ -55,21 +55,21 @@ namespace Soda.Protocol.Framework.Test
         {
             public ushort Header { get; set; } = 5;
 
-            [ProtocolSpan(30)]
+            [Span(30)]
             public byte[] Data { get; set; } = Array.Empty<byte>();
 
-            [ProtocolSpan(SpanType.Bits, 4)]
+            [Span(SpanType.Bits, 4)]
             public byte End { get; set; }
 
-            [ProtocolSpan(20)]
+            [Span(20)]
             public MyClass? Child { get; set; }
 
             public bool IsAck { get; set; }
 
-            [ProtocolIgnore]
+            [Ignore]
             public bool IsReq { get; set; }
 
-            [ProtocolBodyLength(nameof(Header))]
+            [BodyLength(nameof(Header))]
             public byte[] Body { get; set; } = Array.Empty<byte>();
         }
 
