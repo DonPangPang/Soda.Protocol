@@ -25,4 +25,124 @@ namespace Soda.Protocol.Framework.Attributes
             Size = size;
         }
     }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class BitAttribute : Attribute
+    {
+        public BitAttribute(int len = 1)
+        {
+            Length = len;
+        }
+
+        public int Length { get; }
+    }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class ByteAttribute : Attribute
+    {
+    }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class BytesAttribute : Attribute
+    {
+        public BytesAttribute(int len)
+        {
+            Length = len;
+        }
+
+        public int Length { get; }
+    }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class UInt16Attribute : Attribute
+    {
+
+    }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class UInt24Attribute : Attribute
+    {
+
+    }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class UInt32Attribute : Attribute
+    {
+
+    }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class UInt64Attribute : Attribute
+    {
+    }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class BcdAttribute : Attribute
+    {
+        public BcdAttribute(int len)
+        {
+            Length = len;
+        }
+
+        public int Length { get; }
+    }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class CharAttribute : Attribute
+    {
+
+    }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class BigEndianNumberAttribute : Attribute
+    {
+        public BigEndianNumberAttribute(int len)
+        {
+            Length = len;
+        }
+
+        public int Length { get; }
+    }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class AsciiAttribute : Attribute
+    {
+        public AsciiAttribute(int len)
+        {
+            Length = len;
+        }
+
+        public int Length { get; }
+    }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class UnicodeAttribute : Attribute
+    {
+        public UnicodeAttribute(int len)
+        {
+            Length = len;
+        }
+
+        public int Length { get; }
+    }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class HexAttribute : Attribute
+    {
+        public HexAttribute(int len)
+        {
+            Length = len;
+        }
+
+        public int Length { get; }
+    }
+
+    /// <summary>
+    /// 六字节日期
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Property)]
+    public class DateTime6Attribute : Attribute
+    {
+
+    }
 }

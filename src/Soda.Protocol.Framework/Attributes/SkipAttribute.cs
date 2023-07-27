@@ -3,13 +3,10 @@ namespace Soda.Protocol.Framework.Attributes;
 [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
 public class SkipAttribute : Attribute
 {
-    public int? Size { get; set; }
-
-    public SkipAttribute()
-    { }
-
-    public SkipAttribute(int size)
+    public SkipAttribute(int len = 1)
     {
-        Size = size;
+        Length = len;
     }
+
+    public int Length { get; }
 }
